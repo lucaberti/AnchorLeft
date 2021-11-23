@@ -11,7 +11,7 @@ You can download [builds](https://hundredrabbits.itch.io/left) for **OSX, Window
 
 ```
 git clone https://github.com/lucaberti/AnchorLeft/AnchorLeft.git
-cd Left/desktop/
+cd AnchorLeft/desktop/
 npm install
 npm start
 ```
