@@ -124,7 +124,7 @@ function Stats () {
     stats.v = Object.keys(h).length
     stats.p = stats.c > 0 ? clamp((left.textarea_el.selectionEnd / stats.c) * 100, 0, 100).toFixed(2) : 0
     stats.a = left.autoindent ? 'class="fh"' : ''
-    stats.t = Math.floor(0.00133 * text.length) + ':' + Math.round(getDecimal(0.00133 * text.length)*60) // aloud read time
+    stats.t = ("0" + Math.floor(0.00133 * text.length)).slice(-2) + ':' + ("0" + Math.round(getDecimal(0.00133 * text.length)*60)).slice(-2) // aloud read time
     return stats
   }
 
