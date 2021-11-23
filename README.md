@@ -10,7 +10,7 @@
 You can download [builds](https://hundredrabbits.itch.io/left) for **OSX, Windows and Linux**, or if you wish to build it yourself, follow these steps:
 
 ```
-git clone https://github.com/hundredrabbits/Left.git
+git clone https://github.com/lucaberti/AnchorLeft/AnchorLeft.git
 cd Left/desktop/
 npm install
 npm start
