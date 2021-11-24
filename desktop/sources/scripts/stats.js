@@ -110,6 +110,8 @@ function Stats () {
 
   this.parse = function (text = left.textarea_el.value) {
     text = text.length > 5 ? text.trim() : left.textarea_el.value
+    var regexp_nottoread = /\(\(([^)]+)\)\)/g
+    var text_toread = text.replace(regexp_nottoread,'').trim()
 
     const h = {}
     const words = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(' ')
@@ -124,7 +126,7 @@ function Stats () {
     stats.v = Object.keys(h).length
     stats.p = stats.c > 0 ? clamp((left.textarea_el.selectionEnd / stats.c) * 100, 0, 100).toFixed(2) : 0
     stats.a = left.autoindent ? 'class="fh"' : ''
-    stats.t = ("0" + Math.floor(0.00133 * text.length)).slice(-2) + ':' + ("0" + Math.round(getDecimal(0.00133 * text.length)*60)).slice(-2) // aloud read time
+    stats.t = ("0" + Math.floor(0.00133 * text_toread.length)).slice(-2) + ':' + ("0" + Math.round(getDecimal(0.00133 * text_toread.length)*60)).slice(-2) // aloud read time
     return stats
   }
 
